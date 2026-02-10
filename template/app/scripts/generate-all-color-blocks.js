@@ -1,4 +1,4 @@
-// 批量生成所有颜色块图片
+// 批量生成所有颜色块图片（使用安全文件名）
 // 基于 colornames-rgb.json 中的 4909 个专业颜色
 
 import fs from 'fs';
@@ -65,6 +65,14 @@ function rgbToHex(rgb) {
   }).join('');
 }
 
+function sanitizeFileName(name) {
+  return name
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '_')
+    .replace(/-+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
 async function generateAllColorBlocks() {
   console.log('开始生成颜色块图片...\n');
 
@@ -89,7 +97,8 @@ async function generateAllColorBlocks() {
     const colorName = colorNames[i];
     const rgb = colorData[colorName];
     const hexColor = rgbToHex(rgb);
-    const fileName = `${hexColor}.png`;
+    const safeName = sanitizeFileName(colorName);
+    const fileName = `${safeName}.png`;
     const filePath = path.join(colorBlockDir, fileName);
 
     try {
@@ -99,7 +108,8 @@ async function generateAllColorBlocks() {
       colorMapping[colorName] = {
         hex: hexColor,
         fileName: fileName,
-        rgb: rgb
+        rgb: rgb,
+        safeName: safeName
       };
       
       successCount++;
