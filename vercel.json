@@ -6,10 +6,6 @@
   "prebuildCommand": "npm run prebuild",
   "rewrites": [
     {
-      "source": "/color-block/:colorId.png",
-      "destination": "/api/color-block.js"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

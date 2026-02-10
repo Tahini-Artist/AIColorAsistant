@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "generate-color-blocks": "node scripts/generate-color-blocks.js",
+    "generate-color-blocks": "node scripts/generate-all-color-blocks.js",
     "prebuild": "npm run generate-color-blocks"
   },
   "workspaces": [
