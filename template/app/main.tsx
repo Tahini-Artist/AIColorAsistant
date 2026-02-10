@@ -641,6 +641,19 @@ const ColorPickerPage = () => {
     }
   };
 
+  // 获取匹配到的专业颜色的RGB值
+  const getMatchedColorRgb = (hexColor: string) => {
+    if (!colorMatcherRef.current) return null;
+    
+    const rgb = hexToRgbArray(hexColor);
+    try {
+      const result = colorMatcherRef.current.findSimilarColor(rgb);
+      return result.rgb;
+    } catch (error) {
+      return null;
+    }
+  };
+
   const [colorBlockImage, setColorBlockImage] = useState<string | null>(null);
 
   // 生成单色块图片
@@ -661,6 +674,12 @@ const ColorPickerPage = () => {
 
   // 生成颜色色块图片URL
   const generateColorBlockUrl = (hexColor: string) => {
+    const matchedRgb = getMatchedColorRgb(hexColor);
+    if (matchedRgb) {
+      const colorId = matchedRgb.map((v: number) => v.toString(16).padStart(2, '0')).join('');
+      const baseUrl = import.meta.env.VITE_BASE_URL || window.location.origin;
+      return `${baseUrl}/color-block/${colorId}.png`;
+    }
     const colorId = hexColor.replace('#', '');
     const baseUrl = import.meta.env.VITE_BASE_URL || window.location.origin;
     return `${baseUrl}/color-block/${colorId}.png`;
