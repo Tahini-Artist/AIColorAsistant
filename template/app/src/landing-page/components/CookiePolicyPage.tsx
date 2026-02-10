@@ -1,82 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PageLayout from './PageLayout';
 
 export default function CookiePolicyPage() {
+  const tableOfContents = [
+    { id: 'what-are-cookies', title: 'What are Cookies?' },
+    { id: 'why-use-cookies', title: 'Why We Use Cookies' },
+    { id: 'types-of-cookies', title: 'Types of Cookies We Use' },
+    { id: 'table-of-cookies', title: 'Table of Cookies' },
+    { id: 'third-party-cookies', title: 'Third-Party Cookies' },
+    { id: 'how-to-control-cookies', title: 'How to Control Cookies' },
+    { id: 'contact', title: 'Contact Information' },
+    { id: 'changes', title: 'Changes to Policy' },
+  ];
+
   return (
-    <div style={{ 
-      backgroundColor: '#0f172a', 
-      color: '#e2e8f0',
-      minHeight: '100vh',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '4rem 2rem' }}>
-        
-        {/* Header */}
-        <header style={{ marginBottom: '3rem' }}>
-          <Link 
-            to="/"
-            style={{ 
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: '#3b82f6',
-              textDecoration: 'none',
-              fontSize: '1rem',
-              marginBottom: '1.5rem',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#60a5fa'}
-            onMouseLeave={(e) => e.currentTarget.style.color = '#3b82f6'}
-          >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="m3 9 9-7 9 7v-11a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Back to Home
-          </Link>
-          
-          <h1 style={{ 
-            fontSize: '2.5rem', 
-            fontWeight: 'bold', 
-            marginBottom: '1rem',
-            color: '#f8fafc',
-            lineHeight: '1.2'
-          }}>
-            Cookie Policy
-          </h1>
-          <p style={{ 
-            fontSize: '0.875rem', 
-            color: '#64748b',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            fontWeight: '600'
-          }}>
-            Last Updated: February 5, 2026
-          </p>
-        </header>
+    <PageLayout 
+      title="Cookie Policy"
+      subtitle="Last Updated: February 5, 2026"
+      tableOfContents={tableOfContents}
+    >
 
         {/* What are Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="what-are-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             What are Cookies?
           </h2>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -84,7 +40,7 @@ export default function CookiePolicyPage() {
           </p>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             margin: 0
           }}>
@@ -93,18 +49,18 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* Why We Use Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="why-use-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             Why We Use Cookies
           </h2>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -112,33 +68,33 @@ export default function CookiePolicyPage() {
           </p>
           <ul style={{ 
             fontSize: '1.125rem',
-            color: '#94a3b8',
+            color: '#4b5563',
             lineHeight: '1.8',
             paddingLeft: '1.5rem',
             margin: 0
           }}>
             <li style={{ marginBottom: '0.5rem' }}>
-              <strong style={{ color: '#e2e8f0' }}>Remember your preferences:</strong> Store settings like color palette sizes and display options
+              <strong style={{ color: '#374151' }}>Remember your preferences:</strong> Store settings like color palette sizes and display options
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <strong style={{ color: '#e2e8f0' }}>Analyze traffic:</strong> Understand how visitors use our tool to improve performance
+              <strong style={{ color: '#374151' }}>Analyze traffic:</strong> Understand how visitors use our tool to improve performance
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <strong style={{ color: '#e2e8f0' }}>Deliver relevant ads:</strong> Show advertisements that may be of interest to you
+              <strong style={{ color: '#374151' }}>Deliver relevant ads:</strong> Show advertisements that may be of interest to you
             </li>
             <li style={{ marginBottom: '0' }}>
-              <strong style={{ color: '#e2e8f0' }}>Maintain security:</strong> Protect against fraudulent activities and ensure site integrity
+              <strong style={{ color: '#374151' }}>Maintain security:</strong> Protect against fraudulent activities and ensure site integrity
             </li>
           </ul>
         </section>
 
         {/* Types of Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="types-of-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             Types of Cookies We Use
           </h2>
@@ -146,22 +102,22 @@ export default function CookiePolicyPage() {
           {/* Essential Cookies */}
           <div style={{ 
             padding: '1.5rem',
-            backgroundColor: '#1e293b',
+            backgroundColor: '#f3f4f6',
             borderRadius: '0.75rem',
-            border: '1px solid #334155',
+            border: '1px solid #e5e7eb',
             marginBottom: '1.5rem'
           }}>
             <h3 style={{ 
               fontSize: '1.25rem', 
               fontWeight: 'bold', 
               marginBottom: '0.75rem',
-              color: '#e2e8f0'
+              color: '#374151'
             }}>
               Essential Cookies
             </h3>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: '#94a3b8', 
+              color: '#4b5563', 
               lineHeight: '1.8',
               marginBottom: '1rem'
             }}>
@@ -169,7 +125,7 @@ export default function CookiePolicyPage() {
             </p>
             <ul style={{ 
               fontSize: '1.125rem',
-              color: '#94a3b8',
+              color: '#4b5563',
               lineHeight: '1.8',
               paddingLeft: '1.5rem',
               margin: 0
@@ -186,7 +142,7 @@ export default function CookiePolicyPage() {
             </ul>
             <p style={{ 
               fontSize: '1rem', 
-              color: '#64748b',
+              color: '#6b7280',
               marginTop: '1rem',
               margin: 0
             }}>
@@ -197,22 +153,22 @@ export default function CookiePolicyPage() {
           {/* Analytics Cookies */}
           <div style={{ 
             padding: '1.5rem',
-            backgroundColor: '#1e293b',
+            backgroundColor: '#f3f4f6',
             borderRadius: '0.75rem',
-            border: '1px solid #334155',
+            border: '1px solid #e5e7eb',
             marginBottom: '1.5rem'
           }}>
             <h3 style={{ 
               fontSize: '1.25rem', 
               fontWeight: 'bold', 
               marginBottom: '0.75rem',
-              color: '#e2e8f0'
+              color: '#374151'
             }}>
               Analytics Cookies
             </h3>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: '#94a3b8', 
+              color: '#4b5563', 
               lineHeight: '1.8',
               marginBottom: '1rem'
             }}>
@@ -220,7 +176,7 @@ export default function CookiePolicyPage() {
             </p>
             <ul style={{ 
               fontSize: '1.125rem',
-              color: '#94a3b8',
+              color: '#4b5563',
               lineHeight: '1.8',
               paddingLeft: '1.5rem',
               marginBottom: '1rem'
@@ -240,7 +196,7 @@ export default function CookiePolicyPage() {
             </ul>
             <p style={{ 
               fontSize: '1rem', 
-              color: '#64748b',
+              color: '#6b7280',
               marginTop: '1rem',
               margin: 0
             }}>
@@ -251,30 +207,30 @@ export default function CookiePolicyPage() {
           {/* Advertising Cookies */}
           <div style={{ 
             padding: '1.5rem',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            backgroundColor: 'rgba(99, 102, 241, 0.08)',
             borderRadius: '0.75rem',
-            border: '2px solid #3b82f6',
+            border: '2px solid #c7d2fe',
             marginBottom: '1.5rem'
           }}>
             <h3 style={{ 
               fontSize: '1.25rem', 
               fontWeight: 'bold', 
               marginBottom: '0.75rem',
-              color: '#3b82f6'
+              color: '#6366f1'
             }}>
               Advertising Cookies
             </h3>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: '#94a3b8', 
+              color: '#4b5563', 
               lineHeight: '1.8',
               marginBottom: '1rem'
             }}>
-              We plan to display advertisements on our website through <strong style={{ color: '#e2e8f0' }}>Google AdSense</strong>. As a third-party service, Google may use cookies to:
+              We plan to display advertisements on our website through <strong style={{ color: '#374151' }}>Google AdSense</strong>. As a third-party service, Google may use cookies to:
             </p>
             <ul style={{ 
               fontSize: '1.125rem',
-              color: '#94a3b8',
+              color: '#4b5563',
               lineHeight: '1.8',
               paddingLeft: '1.5rem',
               marginBottom: '1rem'
@@ -291,37 +247,37 @@ export default function CookiePolicyPage() {
             </ul>
             <div style={{ 
               padding: '1rem',
-              backgroundColor: '#0f172a',
+              backgroundColor: '#ffffff',
               borderRadius: '0.5rem',
-              border: '1px solid #334155'
+              border: '1px solid #e5e7eb'
             }}>
               <p style={{ 
                 fontSize: '1rem', 
-                color: '#e2e8f0', 
+                color: '#374151', 
                 lineHeight: '1.7',
                 margin: 0
               }}>
-                <strong style={{ color: '#fbbf24' }}>Important:</strong> Google, as a third-party provider, controls these cookies and their use. We do not have access to or control over Google's cookie practices.
+                <strong style={{ color: '#f59e0b' }}>Important:</strong> Google, as a third-party provider, controls these cookies and their use. We do not have access to or control over Google's cookie practices.
               </p>
             </div>
           </div>
         </section>
 
         {/* Table of Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="table-of-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1.5rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             Table of Cookies
           </h2>
           <div style={{ 
             overflowX: 'auto',
             borderRadius: '0.75rem',
-            border: '1px solid #334155',
-            backgroundColor: '#1e293b'
+            border: '1px solid #e5e7eb',
+            backgroundColor: '#ffffff'
           }}>
             <table style={{ 
               width: '100%',
@@ -329,75 +285,75 @@ export default function CookiePolicyPage() {
               fontSize: '1rem'
             }}>
               <thead>
-                <tr style={{ backgroundColor: '#0f172a' }}>
+                <tr style={{ backgroundColor: '#f9fafb' }}>
                   <th style={{ 
                     padding: '1rem',
                     textAlign: 'left',
-                    color: '#f8fafc',
+                    color: '#1f2937',
                     fontWeight: 'bold',
-                    borderBottom: '2px solid #334155'
+                    borderBottom: '2px solid #e5e7eb'
                   }}>
                     Category
                   </th>
                   <th style={{ 
                     padding: '1rem',
                     textAlign: 'left',
-                    color: '#f8fafc',
+                    color: '#1f2937',
                     fontWeight: 'bold',
-                    borderBottom: '2px solid #334155'
+                    borderBottom: '2px solid #e5e7eb'
                   }}>
                     Purpose
                   </th>
                   <th style={{ 
                     padding: '1rem',
                     textAlign: 'left',
-                    color: '#f8fafc',
+                    color: '#1f2937',
                     fontWeight: 'bold',
-                    borderBottom: '2px solid #334155'
+                    borderBottom: '2px solid #e5e7eb'
                   }}>
                     Provider
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: '1px solid #334155' }}>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#e2e8f0',
+                    color: '#374151',
                     fontWeight: '500'
                   }}>
                     Necessary
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     Site navigation & Security
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     AIColorAsistant
                   </td>
                 </tr>
-                <tr style={{ borderBottom: '1px solid #334155' }}>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#e2e8f0',
+                    color: '#374151',
                     fontWeight: '500'
                   }}>
                     Analytics
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     Traffic analysis & User behavior
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     Google Analytics
                   </td>
@@ -405,20 +361,20 @@ export default function CookiePolicyPage() {
                 <tr>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#e2e8f0',
+                    color: '#374151',
                     fontWeight: '500'
                   }}>
                     Advertising
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     Personalized ad delivery
                   </td>
                   <td style={{ 
                     padding: '1rem',
-                    color: '#94a3b8'
+                    color: '#4b5563'
                   }}>
                     Google AdSense
                   </td>
@@ -429,18 +385,18 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* Third-party Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="third-party-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             Third-Party Cookies
           </h2>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -448,7 +404,7 @@ export default function CookiePolicyPage() {
           </p>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -456,7 +412,7 @@ export default function CookiePolicyPage() {
           </p>
           <ul style={{ 
             fontSize: '1.125rem',
-            color: '#94a3b8',
+            color: '#4b5563',
             lineHeight: '1.8',
             paddingLeft: '1.5rem',
             margin: 0
@@ -467,13 +423,11 @@ export default function CookiePolicyPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ 
-                  color: '#3b82f6', 
+                  color: '#6366f1', 
                   textDecoration: 'none',
-                  borderBottom: '1px solid #3b82f6',
+                  borderBottom: '1px solid #6366f1',
                   paddingBottom: '0.125rem'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = '#60a5fa'}
-                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = '#3b82f6'}
               >
                 Google's Cookie Policy
               </a>
@@ -484,13 +438,11 @@ export default function CookiePolicyPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ 
-                  color: '#3b82f6', 
+                  color: '#6366f1', 
                   textDecoration: 'none',
-                  borderBottom: '1px solid #3b82f6',
+                  borderBottom: '1px solid #6366f1',
                   paddingBottom: '0.125rem'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = '#60a5fa'}
-                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = '#3b82f6'}
               >
                 Google's Privacy Policy
               </a>
@@ -499,18 +451,18 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* How to Control Cookies */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="how-to-control-cookies" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             How to Control Cookies
           </h2>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -521,13 +473,13 @@ export default function CookiePolicyPage() {
             fontSize: '1.25rem', 
             fontWeight: 'bold', 
             marginBottom: '0.75rem',
-            color: '#e2e8f0'
+            color: '#374151'
           }}>
             Browser Settings
           </h3>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -535,7 +487,7 @@ export default function CookiePolicyPage() {
           </p>
           <ul style={{ 
             fontSize: '1.125rem',
-            color: '#94a3b8',
+            color: '#4b5563',
             lineHeight: '1.8',
             paddingLeft: '1.5rem',
             marginBottom: '1rem'
@@ -559,13 +511,13 @@ export default function CookiePolicyPage() {
             fontWeight: 'bold', 
             marginBottom: '0.75rem',
             marginTop: '1.5rem',
-            color: '#e2e8f0'
+            color: '#374151'
           }}>
             Opt-Out of Personalized Advertising
           </h3>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -573,9 +525,9 @@ export default function CookiePolicyPage() {
           </p>
           <div style={{ 
             padding: '1.5rem',
-            backgroundColor: '#1e293b',
+            backgroundColor: '#f3f4f6',
             borderRadius: '0.75rem',
-            border: '1px solid #334155',
+            border: '1px solid #e5e7eb',
             textAlign: 'center'
           }}>
             <a 
@@ -587,29 +539,19 @@ export default function CookiePolicyPage() {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: '#3b82f6',
+                backgroundColor: '#6366f1',
                 color: 'white',
                 textDecoration: 'none',
                 borderRadius: '0.5rem',
                 fontSize: '1rem',
                 fontWeight: '500',
-                transition: 'all 0.2s'
+                transition: 'all 0.2s',
+                boxShadow: '0 2px 4px rgba(99, 102, 241, 0.2)'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
             >
-              <svg 
-                width="18" 
-                height="18" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M10 13a5 5 0 0 0-5-5" />
-                <polyline points="12 17 5 17 5 12" />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
               </svg>
               Google Ad Settings
             </a>
@@ -659,7 +601,7 @@ export default function CookiePolicyPage() {
           </div>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             margin: '0 0 1rem 0'
           }}>
@@ -667,7 +609,7 @@ export default function CookiePolicyPage() {
           </p>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             margin: 0
           }}>
@@ -676,18 +618,18 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* Contact Information */}
-        <section style={{ marginBottom: '3rem' }}>
+        <section id="contact" style={{ marginBottom: '3rem' }}>
           <h2 style={{ 
             fontSize: '1.875rem', 
             fontWeight: 'bold', 
             marginBottom: '1rem',
-            color: '#f8fafc'
+            color: '#1f2937'
           }}>
             Contact Us
           </h2>
           <p style={{ 
             fontSize: '1.125rem', 
-            color: '#94a3b8', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
@@ -695,79 +637,56 @@ export default function CookiePolicyPage() {
           </p>
           <div style={{ 
             padding: '1.5rem',
-            backgroundColor: '#1e293b',
+            backgroundColor: '#f3f4f6',
             borderRadius: '0.75rem',
-            border: '1px solid #334155'
+            border: '1px solid #e5e7eb'
           }}>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: '#e2e8f0', 
+              color: '#374151', 
               lineHeight: '1.7',
               margin: '0 0 0.5rem 0'
             }}>
-              <strong style={{ color: '#f8fafc' }}>Email:</strong>{' '}
-              <a 
-                href="mailto:jazenfowr@gmail.com"
-                style={{ 
-                  color: '#3b82f6', 
-                  textDecoration: 'none',
-                  borderBottom: '1px solid #3b82f6',
-                  paddingBottom: '0.125rem'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = '#60a5fa'}
-                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = '#3b82f6'}
-              >
-                jazenfowr@gmail.com
-              </a>
+              <strong style={{ color: '#1f2937' }}>Email:</strong> jazenfowr@gmail.com
             </p>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: '#94a3b8', 
+              color: '#374151', 
               lineHeight: '1.7',
               margin: 0
             }}>
-              We typically respond to inquiries within 24-48 hours.
+              <strong style={{ color: '#1f2937' }}>Website:</strong> https://ai-color-assistant.vercel.app
             </p>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer style={{ 
-          paddingTop: '2rem',
-          borderTop: '1px solid #1e293b',
-          textAlign: 'center'
-        }}>
+        {/* Changes to Policy */}
+        <section id="changes" style={{ marginBottom: '3rem' }}>
+          <h2 style={{ 
+            fontSize: '1.875rem', 
+            fontWeight: 'bold', 
+            marginBottom: '1rem',
+            color: '#1f2937'
+          }}>
+            Changes to This Policy
+          </h2>
           <p style={{ 
-            fontSize: '1rem', 
-            color: '#94a3b8', 
+            fontSize: '1.125rem', 
+            color: '#4b5563', 
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
-            For more information, please visit our{' '}
-            <Link 
-              to="/privacy"
-              style={{ 
-                color: '#3b82f6', 
-                textDecoration: 'none',
-                borderBottom: '1px solid #3b82f6',
-                paddingBottom: '0.125rem'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = '#60a5fa'}
-              onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = '#3b82f6'}
-            >
-                Privacy Policy
-              </Link>.
+            We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the "Last Updated" date.
           </p>
           <p style={{ 
-            fontSize: '0.875rem', 
-            color: '#64748b',
+            fontSize: '1.125rem', 
+            color: '#4b5563', 
+            lineHeight: '1.8',
             margin: 0
           }}>
-            © 2026 AIColorAsistant. All rights reserved.
+            You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
           </p>
-        </footer>
-
-      </div>
-    </div>
-  );
-}
+        </section>
+      </PageLayout>
+    );
+  }

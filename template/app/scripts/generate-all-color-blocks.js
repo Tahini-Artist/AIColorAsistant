@@ -4,58 +4,26 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import zlib from 'zlib';
+import { createCanvas } from 'canvas';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-function createSimplePNG(hexColor) {
+function createSimpleJPEG(hexColor) {
   const width = 500;
   const height = 500;
 
-  const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+  const canvas = createCanvas(width, height);
+  const ctx = canvas.getContext('2d');
 
   const r = parseInt(hexColor.substring(0, 2), 16);
   const g = parseInt(hexColor.substring(2, 4), 16);
   const b = parseInt(hexColor.substring(4, 6), 16);
 
-  const imageData = Buffer.alloc(width * height * 4);
-  for (let i = 0; i < width * height; i++) {
-    imageData[i * 4] = r;
-    imageData[i * 4 + 1] = g;
-    imageData[i * 4 + 2] = b;
-    imageData[i * 4 + 3] = 255;
-  }
+  ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+  ctx.fillRect(0, 0, width, height);
 
-  const IHDR = Buffer.alloc(13);
-  IHDR.writeUInt32BE(width, 0);
-  IHDR.writeUInt32BE(height, 4);
-  IHDR.writeUInt8(8, 8);
-  IHDR.writeUInt8(2, 9);
-  IHDR.writeUInt8(0, 10);
-  IHDR.writeUInt8(0, 11);
-  IHDR.writeUInt8(0, 12);
-
-  const compressed = zlib.deflateSync(imageData);
-
-  function createChunk(type, data) {
-    const length = Buffer.alloc(4);
-    length.writeUInt32BE(data.length, 0);
-    const typeBuffer = Buffer.from(type, 'ascii');
-    const crc = Buffer.alloc(4);
-    
-    const crcInput = Buffer.concat([typeBuffer, data]);
-    const crcValue = zlib.crc32(crcInput);
-    crc.writeUInt32BE(crcValue >>> 0, 0);
-    
-    return Buffer.concat([length, typeBuffer, data, crc]);
-  }
-
-  const IHDRChunk = createChunk('IHDR', IHDR);
-  const IDATChunk = createChunk('IDAT', compressed);
-  const IENDChunk = createChunk('IEND', Buffer.alloc(0));
-
-  return Buffer.concat([PNG_SIGNATURE, IHDRChunk, IDATChunk, IENDChunk]);
+  return canvas.toBuffer('image/jpeg', { quality: 0.9 });
 }
 
 function rgbToHex(rgb) {
@@ -98,11 +66,11 @@ async function generateAllColorBlocks() {
     const rgb = colorData[colorName];
     const hexColor = rgbToHex(rgb);
     const safeName = sanitizeFileName(colorName);
-    const fileName = `${safeName}.png`;
+    const fileName = `${safeName}.jpg`;
     const filePath = path.join(colorBlockDir, fileName);
 
     try {
-      const buffer = createSimplePNG(hexColor);
+      const buffer = createSimpleJPEG(hexColor);
       fs.writeFileSync(filePath, buffer);
       
       colorMapping[colorName] = {

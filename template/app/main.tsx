@@ -266,6 +266,7 @@ const LandingPage = () => {
 
 // 创建ColorPickerPage组件
 const ColorPickerPage = () => {
+  const navigate = useNavigate();
   const [isDragging, setIsDragging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState<string | null>(null);
@@ -678,11 +679,11 @@ const ColorPickerPage = () => {
     if (matchedInfo) {
       const baseUrl = import.meta.env.VITE_BASE_URL || window.location.origin;
       const safeName = matchedInfo.name.replace(/\s+/g, '_').replace(/[^\w_]/g, '');
-      return `${baseUrl}/color-block/${safeName}.png`;
+      return `${baseUrl}/color-block/${safeName}.jpg`;
     }
     const colorId = hexColor.replace('#', '');
     const baseUrl = import.meta.env.VITE_BASE_URL || window.location.origin;
-    return `${baseUrl}/color-block/${colorId}.png`;
+    return `${baseUrl}/color-block/${colorId}.jpg`;
   };
 
   // 获取基础颜色名称（简单颜色名）
@@ -790,6 +791,38 @@ const ColorPickerPage = () => {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <button
+          onClick={() => navigate('/')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            padding: '0.75rem 1.5rem',
+            backgroundColor: '#3b82f6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '0.5rem',
+            fontSize: '1rem',
+            fontWeight: '600',
+            cursor: 'pointer',
+            transition: 'all 0.2s',
+            boxShadow: '0 2px 4px rgba(59, 130, 246, 0.3)',
+            marginBottom: '1.5rem'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#2563eb';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 4px 6px rgba(59, 130, 246, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#3b82f6';
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(59, 130, 246, 0.3)';
+          }}
+        >
+          <span>←</span>
+          <span>Back Home</span>
+        </button>
 
         {isLoading ? (
           // 加载动画
