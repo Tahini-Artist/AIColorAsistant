@@ -1,9 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd template/app && npm run generate-color-blocks && npm run build",
   "outputDirectory": "template/app/dist",
   "framework": "vite",
   "installCommand": "cd template/app && npm install",
-  "prebuildCommand": "npm run prebuild",
   "rewrites": [
     {
       "source": "/(.*)",
