@@ -71,6 +71,7 @@ cd template/app && npm install
 2. 检查所有页面是否正常加载
 3. 测试颜色选择器功能
 4. 检查 AI prompt 生成的 URL 是否正确
+5. **测试颜色块图片**：访问 `https://your-app.vercel.app/color-block/000000.png` 等链接
 
 ## 🔧 本地开发
 

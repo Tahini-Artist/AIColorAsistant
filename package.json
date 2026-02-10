@@ -8,7 +8,8 @@
     "prettier:format": "prettier --ignore-unknown --write --config .prettierrc .",
     "dev": "cd template/app && npm run dev",
     "build": "cd template/app && npm run build",
-    "preview": "cd template/app && npm run preview"
+    "preview": "cd template/app && npm run preview",
+    "prebuild": "cd template/app && npm run generate-color-blocks"
   },
   "engines": {
     "node": ">=18.0.0"
