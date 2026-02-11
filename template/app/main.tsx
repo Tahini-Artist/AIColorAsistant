@@ -53,6 +53,36 @@ const LandingPage = () => {
           }}>
             Extract. Define. Control. Professional color names and reference URLs designed to eliminate semantic noise in AI art creation
           </p>
+          <div style={{ marginTop: '2rem' }}>
+            <button 
+              onClick={handleGetStarted}
+              style={{ 
+                padding: '1rem 3rem',
+                border: 'none',
+                borderRadius: '0.75rem',
+                backgroundColor: '#3b82f6',
+                color: 'white',
+                fontSize: '1.25rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                letterSpacing: '0.5px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#2563eb';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#3b82f6';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+              }}
+            >
+              Try It Now →
+            </button>
+          </div>
         </section>
 
         {/* 对比展示区 - Wow时刻 */}
@@ -219,41 +249,6 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div style={{ 
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '3rem'
-          }}>
-            <button 
-              onClick={handleGetStarted}
-              style={{ 
-                padding: '1rem 3rem',
-                border: 'none',
-                borderRadius: '0.75rem',
-                backgroundColor: '#3b82f6',
-                color: 'white',
-                fontSize: '1.25rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                letterSpacing: '0.5px'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#2563eb';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#3b82f6';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
-              }}
-            >
-              Try It Now →
-            </button>
           </div>
         </section>
 
@@ -838,7 +833,7 @@ const ColorPickerPage = () => {
               color: '#64748b', 
               marginBottom: '1rem'
             }}>
-              正在提取色彩...
+              Extracting colors...
             </div>
             <div style={{ 
               width: '50px', 
@@ -1019,20 +1014,6 @@ const ColorPickerPage = () => {
                       }}
                     >
                       +
-                    </button>
-                    <button 
-                      onClick={handleRemoveColor}
-                      style={{
-                        width: '30px',
-                        height: '30px',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: '0.25rem',
-                        backgroundColor: 'white',
-                        cursor: 'pointer',
-                        fontSize: '1.25rem'
-                      }}
-                    >
-                      -
                     </button>
                   </div>
                 </div>

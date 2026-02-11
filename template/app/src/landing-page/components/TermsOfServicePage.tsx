@@ -73,7 +73,7 @@ export default function TermsOfServicePage() {
           lineHeight: '1.8',
           marginBottom: '1rem'
         }}>
-          By accessing or using AIColorAsistant ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Service.
+          By accessing or using AIColorAssistant ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Service.
         </p>
         <p style={{ 
           fontSize: '1.125rem', 
@@ -101,7 +101,7 @@ export default function TermsOfServicePage() {
           lineHeight: '1.8',
           marginBottom: '1rem'
         }}>
-          AIColorAsistant is an AI-powered color extraction and palette generation tool designed to assist artists and creators in their AI art workflows. Our Service allows users to:
+          AIColorAssistant is an AI-powered color extraction and palette generation tool designed to assist artists and creators in their AI art workflows. Our Service allows users to:
         </p>
         <ul style={{ 
           fontSize: '1.125rem',
@@ -258,7 +258,7 @@ export default function TermsOfServicePage() {
           lineHeight: '1.8',
           marginBottom: '1rem'
         }}>
-          The Service, including its design, layout, code, color database, and all other content, is owned by AIColorAsistant and is protected by intellectual property laws.
+          The Service, including its design, layout, code, color database, and all other content, is owned by AIColorAssistant and is protected by intellectual property laws.
         </p>
         <p style={{ 
           fontSize: '1.125rem', 
@@ -286,7 +286,7 @@ export default function TermsOfServicePage() {
           lineHeight: '1.8',
           marginBottom: '1rem'
         }}>
-          To the fullest extent permitted by applicable law, AIColorAsistant shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:
+          To the fullest extent permitted by applicable law, AIColorAssistant shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:
         </p>
         <ul style={{ 
           fontSize: '1.125rem',
@@ -374,7 +374,7 @@ export default function TermsOfServicePage() {
           lineHeight: '1.8',
           marginBottom: '1rem'
         }}>
-          These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which AIColorAsistant operates, without regard to its conflict of law provisions.
+          These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which AIColorAssistant operates, without regard to its conflict of law provisions.
         </p>
         <p style={{ 
           fontSize: '1.125rem', 

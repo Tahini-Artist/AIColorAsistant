@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-color-asistant.vercel.app/sitemap.xml

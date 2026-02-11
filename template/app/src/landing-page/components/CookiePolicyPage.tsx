@@ -64,7 +64,7 @@ export default function CookiePolicyPage() {
             lineHeight: '1.8',
             marginBottom: '1rem'
           }}>
-            We use cookies to enhance your experience on AIColorAsistant. Specifically, we use them to:
+            We use cookies to enhance your experience on AIColorAssistant. Specifically, we use them to:
           </p>
           <ul style={{ 
             fontSize: '1.125rem',
@@ -334,7 +334,7 @@ export default function CookiePolicyPage() {
                     padding: '1rem',
                     color: '#4b5563'
                   }}>
-                    AIColorAsistant
+                    AIColorAssistant
                   </td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid #e5e7eb' }}>

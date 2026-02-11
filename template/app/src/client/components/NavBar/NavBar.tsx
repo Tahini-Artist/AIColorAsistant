@@ -14,7 +14,6 @@ import { throttleWithTrailingInvocation } from "../../../shared/utils";
 import { UserDropdown } from "../../../user/UserDropdown";
 import { UserMenuItems } from "../../../user/UserMenuItems";
 import { useIsLandingPage } from "../../hooks/useIsLandingPage";
-import logo from "../../static/logo.webp";
 import { cn } from "../../utils";
 import DarkModeSwitcher from "../DarkModeSwitcher";
 import { Announcement } from "./Announcement";
@@ -82,12 +81,12 @@ export default function NavBar({
                   className={cn(
                     "text-foreground leading-6 font-semibold transition-all duration-300",
                     {
-                      "ml-2 text-sm": !isScrolled,
-                      "ml-2 text-xs": isScrolled,
+                      "ml-2 text-xl": !isScrolled,
+                      "ml-2 text-lg": isScrolled,
                     },
                   )}
                 >
-                  Your SaaS
+                  AIColorAssistant
                 </span>
               </WaspRouterLink>
 
@@ -180,7 +179,7 @@ function NavBarMobileMenu({
           <SheetHeader>
             <SheetTitle className="flex items-center">
               <WaspRouterLink to={routes.LandingPageRoute.to}>
-                <span className="sr-only">Your SaaS</span>
+                <span className="sr-only">AIColorAssistant</span>
                 <NavLogo isScrolled={false} />
               </WaspRouterLink>
             </SheetTitle>
@@ -245,12 +244,34 @@ function renderNavigationItems(
 }
 
 const NavLogo = ({ isScrolled }: { isScrolled: boolean }) => (
-  <img
-    className={cn("transition-all duration-500", {
-      "size-8": !isScrolled,
-      "size-7": isScrolled,
+  <svg
+    className={cn("transition-all duration-300 hover:scale-105", {
+      "w-8 h-8": !isScrolled,
+      "w-7 h-7": isScrolled,
     })}
-    src={logo}
-    alt="Your SaaS App"
-  />
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="4"
+      y="4"
+      width="20"
+      height="20"
+      rx="6"
+      fill="#3b82f6"
+      transform="rotate(-10 14 14)"
+    />
+    <rect
+      x="10"
+      y="10"
+      width="16"
+      height="16"
+      rx="5"
+      fill="#a855f7"
+      transform="rotate(5 18 18)"
+    />
+  </svg>
 );

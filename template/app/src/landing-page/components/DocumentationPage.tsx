@@ -34,7 +34,7 @@ export default function DocumentationPage() {
           lineHeight: '1.8',
           marginBottom: '1.25rem'
         }}>
-          AIColorAsistant bridges the gap between real-world colors and AI-generated art. Our tool transforms colors you see in images—photographs, artwork, nature—into precise, AI-ready prompts that art generators like Midjourney and Stable Diffusion can understand and reproduce accurately.
+          AIColorAssistant bridges the gap between real-world colors and AI-generated art. Our tool transforms colors you see in images—photographs, artwork, nature—into precise, AI-ready prompts that art generators like Midjourney and Stable Diffusion can understand and reproduce accurately.
         </p>
         <p style={{ 
           fontSize: '1.125rem', 

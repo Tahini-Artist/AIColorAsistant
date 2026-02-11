@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
           lineHeight: '1.8',
           marginBottom: '1.25rem'
         }}>
-          AIColorAsistant ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our AI color extraction tool. By using our service, you agree to the terms outlined in this policy.
+          AIColorAssistant ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our AI color extraction tool. By using our service, you agree to the terms outlined in this policy.
         </p>
         <p style={{ 
           fontSize: '1.0625rem', 

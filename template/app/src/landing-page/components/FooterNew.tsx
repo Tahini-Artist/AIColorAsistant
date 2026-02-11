@@ -48,7 +48,7 @@ export default function FooterNew() {
               </div>
             </div>
             <h3 style={{ fontSize: '1.125rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '0.5rem' }}>
-              AIColorAsistant
+              AIColorAssistant
             </h3>
             <p style={{ fontSize: '0.875rem', color: '#64748b' }}>
               Transform images into AI-ready color palettes.
@@ -134,7 +134,7 @@ export default function FooterNew() {
         <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '2rem', marginTop: '2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
             <p style={{ color: '#64748b', fontSize: '0.875rem' }}>
-              Copyright © 2026 AIColorAsistant. All rights reserved.
+              Copyright © 2026 AIColorAssistant. All rights reserved.
             </p>
           </div>
         </div>
